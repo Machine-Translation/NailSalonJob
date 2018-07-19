@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nvt-4E-hku">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign in list-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ClientTableViewController" customModule="Salon_Management" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vrh-pF-KMB">
+                                <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vT0-li-tea">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="543"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="543" id="der-rg-bBx"/>
+                                        </constraints>
+                                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="spatial" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="client" id="IZN-wf-JLw" customClass="ClientTableViewCell" customModule="Salon_Management" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="768" height="100"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IZN-wf-JLw" id="fAP-w5-6aH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="768" height="99.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="2DA-4y-Rgp">
+                                                            <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l1G-UC-TV1">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
+                                                                </stackView>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="961-72-PYy">
+                                                                    <rect key="frame" x="550" y="0.0" width="218" height="50"/>
+                                                                </stackView>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="l1G-UC-TV1" firstAttribute="top" secondItem="2DA-4y-Rgp" secondAttribute="top" id="64H-PE-nRO"/>
+                                                                <constraint firstItem="961-72-PYy" firstAttribute="leading" secondItem="2DA-4y-Rgp" secondAttribute="leading" constant="550" id="7xC-Wn-vqS">
+                                                                    <variation key="heightClass=regular-widthClass=compact" constant="20" symbolic="YES"/>
+                                                                </constraint>
+                                                                <constraint firstAttribute="bottom" secondItem="l1G-UC-TV1" secondAttribute="bottom" id="gUk-Qg-lUb"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="2DA-4y-Rgp" firstAttribute="top" secondItem="fAP-w5-6aH" secondAttribute="top" id="GkW-2O-K8M"/>
+                                                        <constraint firstItem="2DA-4y-Rgp" firstAttribute="leading" secondItem="fAP-w5-6aH" secondAttribute="leading" id="Nmj-Y3-x7C"/>
+                                                        <constraint firstAttribute="trailing" secondItem="2DA-4y-Rgp" secondAttribute="trailing" id="nkW-8l-XyV"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GeJ-eR-HPb">
+                                        <rect key="frame" x="0.0" y="543" width="768" height="417"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccd-Ov-lVy">
+                                                <rect key="frame" x="0.0" y="0.0" width="768" height="417"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Sign In Here">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="fLv-KO-Djy" kind="presentation" id="l49-0f-UrR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <viewLayoutGuide key="safeArea" id="gec-nP-VvQ"/>
+                                    </stackView>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="mjh-zN-Wme"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Vrh-pF-KMB" secondAttribute="trailing" id="9L6-2L-dge"/>
+                            <constraint firstItem="Vrh-pF-KMB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FTw-T3-Nlr"/>
+                            <constraint firstItem="Vrh-pF-KMB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qGo-qi-reb"/>
+                            <constraint firstItem="Vrh-pF-KMB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yws-Il-pIW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sign in list" id="7CE-ZH-lF5"/>
+                    <connections>
+                        <outlet property="SingInButton" destination="ccd-Ov-lVy" id="Y3X-fI-7fk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2852" y="121.88905547226388"/>
+        </scene>
+        <!--Hailo Nail Salon-->
+        <scene sceneID="ivj-2J-Nsr">
+            <objects>
+                <viewController id="Cc1-FE-cdi" customClass="ClientViewController" customModule="Salon_Management" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Grp-t2-wTV">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dj-So-twz">
+                                <rect key="frame" x="294" y="744" width="157" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="3aN-4I-9Iv"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Hailo Nail Salon" id="qug-8v-l9C">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1ma-Nf-eFr">
+                            <connections>
+                                <action selector="cancel:" destination="Cc1-FE-cdi" id="xvP-jE-2Bh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="saveButton" destination="8dj-So-twz" id="Aoy-td-9m6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="US0-5T-ntX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4639.0625" y="121.87499999999999"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lrg-6y-rRF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nvt-4E-hku" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="INX-3c-lRm">
+                        <rect key="frame" x="0.0" y="20" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="UJc-HT-8do"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uMU-44-H2H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1910" y="122"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gDe-zU-pq3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fLv-KO-Djy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FWY-2N-zcY">
+                        <rect key="frame" x="0.0" y="20" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Cc1-FE-cdi" kind="relationship" relationship="rootViewController" id="d9K-ag-6Yt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uul-ly-ZuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3804" y="614"/>
+        </scene>
+    </scenes>
+</document>
