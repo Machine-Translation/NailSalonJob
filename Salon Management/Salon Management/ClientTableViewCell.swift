@@ -17,6 +17,7 @@ class ClientTableViewCell: UITableViewCell, UICollectionViewDataSource {
     @IBOutlet weak var employeeNameLabel: UILabel!
     @IBOutlet weak var timeBackLabel: UILabel!
     @IBOutlet weak var clientNumberLabel: UILabel!
+    @IBOutlet weak var itemCollectionView: UICollectionView!
     
     var items = [String]()
     
@@ -24,6 +25,7 @@ class ClientTableViewCell: UITableViewCell, UICollectionViewDataSource {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        itemCollectionView.dataSource = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -35,9 +37,11 @@ class ClientTableViewCell: UITableViewCell, UICollectionViewDataSource {
     //MARK: Extra
     func updateView() {
         //Needs to force the collection view to update with new items.
+        itemCollectionView.reloadData()
     }
+ 
     
-    //MARK: UICollectionViewDataSource
+    // MARK: UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count

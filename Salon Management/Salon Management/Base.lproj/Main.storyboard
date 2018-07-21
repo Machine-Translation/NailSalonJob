@@ -76,23 +76,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dj-So-twz">
-                                <rect key="frame" x="294" y="974" width="157" height="30"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                <state key="normal" title="Submit">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ZVO-O9-KCJ" kind="unwind" unwindAction="unwindToClientListWithSender:" id="CB2-vI-z9Y"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Oa6-N6-koI">
+                                <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Halo Nails" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEl-FW-ZOV">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="65.5"/>
+                                        <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="56"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mrF-7c-SXb">
+                                        <rect key="frame" x="0.0" y="65.5" width="768" height="814.5"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Name" borderStyle="line" placeholder="Name" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="4Mo-F0-RzT">
+                                                <rect key="frame" x="0.0" y="0.0" width="768" height="814.5"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="meG-4N-Xnp">
+                                        <rect key="frame" x="0.0" y="880" width="768" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iRJ-LM-B7H">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="a95-Tk-y2I">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </view>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dj-So-twz">
+                                        <rect key="frame" x="0.0" y="930" width="768" height="30"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                        <state key="normal" title="Submit">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="ZVO-O9-KCJ" kind="unwind" unwindAction="unwindToClientListWithSender:" id="CB2-vI-z9Y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="8dj-So-twz" secondAttribute="bottom" id="2BU-iD-NWj"/>
+                                    <constraint firstAttribute="trailing" secondItem="DEl-FW-ZOV" secondAttribute="trailing" id="5g2-Hp-e5N"/>
+                                    <constraint firstItem="meG-4N-Xnp" firstAttribute="leading" secondItem="Oa6-N6-koI" secondAttribute="leading" id="FgE-Vr-9je"/>
+                                    <constraint firstAttribute="trailing" secondItem="meG-4N-Xnp" secondAttribute="trailing" id="JT1-Aa-oJO"/>
+                                    <constraint firstItem="DEl-FW-ZOV" firstAttribute="leading" secondItem="Oa6-N6-koI" secondAttribute="leading" id="KSh-5R-cOQ"/>
+                                    <constraint firstItem="8dj-So-twz" firstAttribute="top" secondItem="meG-4N-Xnp" secondAttribute="bottom" id="Rs2-Wn-3Pv"/>
+                                    <constraint firstItem="8dj-So-twz" firstAttribute="leading" secondItem="Oa6-N6-koI" secondAttribute="leading" id="TFG-iZ-qrp"/>
+                                    <constraint firstItem="DEl-FW-ZOV" firstAttribute="top" secondItem="Oa6-N6-koI" secondAttribute="top" id="YYU-rg-5FC"/>
+                                    <constraint firstItem="8dj-So-twz" firstAttribute="top" secondItem="meG-4N-Xnp" secondAttribute="bottom" id="bRN-3w-OhM"/>
+                                    <constraint firstAttribute="trailing" secondItem="8dj-So-twz" secondAttribute="trailing" id="dkb-RK-zcO"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8dj-So-twz" firstAttribute="leading" secondItem="3aN-4I-9Iv" secondAttribute="leading" constant="294" id="I0B-3u-HxA"/>
-                            <constraint firstItem="3aN-4I-9Iv" firstAttribute="trailing" secondItem="8dj-So-twz" secondAttribute="trailing" constant="317" id="MG4-Cg-4QK"/>
-                            <constraint firstItem="3aN-4I-9Iv" firstAttribute="bottom" secondItem="8dj-So-twz" secondAttribute="bottom" constant="20" id="tgs-nS-tOl"/>
+                            <constraint firstItem="Oa6-N6-koI" firstAttribute="leading" secondItem="3aN-4I-9Iv" secondAttribute="leading" id="LHh-KG-EtU"/>
+                            <constraint firstItem="3aN-4I-9Iv" firstAttribute="bottom" secondItem="Oa6-N6-koI" secondAttribute="bottom" id="LQC-cM-H5e"/>
+                            <constraint firstItem="Oa6-N6-koI" firstAttribute="top" secondItem="3aN-4I-9Iv" secondAttribute="top" id="Lho-d2-WTy"/>
+                            <constraint firstItem="3aN-4I-9Iv" firstAttribute="trailing" secondItem="Oa6-N6-koI" secondAttribute="trailing" id="bEB-QI-Eb0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3aN-4I-9Iv"/>
                     </view>
@@ -193,6 +248,9 @@
                                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="S5v-AR-w93">
                                                                             <rect key="frame" x="0.0" y="0.0" width="334" height="210"/>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="210" id="FEu-os-NG0"/>
+                                                                            </constraints>
                                                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="18" minimumInteritemSpacing="3" id="ZBz-nI-Pal">
                                                                                 <size key="itemSize" width="103" height="39"/>
                                                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -277,6 +335,7 @@
                                     <outlet property="clientNameLabel" destination="ch0-oM-wRv" id="OJd-Gx-uHa"/>
                                     <outlet property="clientNumberLabel" destination="EYU-dC-A0Y" id="V9w-fC-Acm"/>
                                     <outlet property="employeeNameLabel" destination="nge-aX-Gmm" id="VO4-To-1V5"/>
+                                    <outlet property="itemCollectionView" destination="S5v-AR-w93" id="FuD-Zq-vpr"/>
                                     <outlet property="signInTimeLabel" destination="fXF-Uf-ZwB" id="6uY-wP-Lrv"/>
                                     <outlet property="timeBackLabel" destination="wN6-Qx-C3B" id="uHr-3t-npX"/>
                                 </connections>
