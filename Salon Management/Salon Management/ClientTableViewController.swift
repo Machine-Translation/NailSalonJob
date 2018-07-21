@@ -25,6 +25,9 @@ class ClientTableViewController: UITableViewController {
         if let savedClients = loadClients() {
             clients += savedClients
         }
+        else {
+            loadSampleClients()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,7 +48,7 @@ class ClientTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
-        let cellIdentifier = "ClientTableViewCell"
+        let cellIdentifier = "client"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ClientTableViewCell else {
             fatalError("The dequeued cell is not an instance of ClientTableViewCell")
         }
@@ -54,7 +57,13 @@ class ClientTableViewController: UITableViewController {
         let client = clients[indexPath.row]
         
         //Set up needed variables for elements in cell.
-        //cell.nameLabel.text = client.name
+        cell.clientNameLabel.text = client.name
+        cell.signInTimeLabel.text = client.timeIn
+        cell.employeeNameLabel.text = client.employee
+        cell.timeBackLabel.text = client.timeBack
+        cell.items = client.items
+        cell.clientNumberLabel.text = String(indexPath.row + 1)
+        cell.updateView()
         
         return cell
     }
@@ -105,7 +114,7 @@ class ClientTableViewController: UITableViewController {
         super.prepare(for: segue, sender: sender)
         switch(segue.identifier ?? "") {
         case "AddItem":
-            os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+            os_log("Adding a new client.", log: OSLog.default, type: .debug)
             
         case "ShowDetail":
             guard let clientDetailViewController = segue.destination as? ClientViewController else {
@@ -150,6 +159,23 @@ class ClientTableViewController: UITableViewController {
     }
     
     //MARK: Private functions
+    private func loadSampleClients() {
+        guard let client1 = Client(name: "Steve", items: [""]) else {
+            fatalError("Unable to instantiate client1")
+        }
+        
+        guard let client2 = Client(name: "Michelle", items: ["Manicure", "Fill", "Fullset"], employee: "Stella", timeIn: "15:00", timeBack: "17:00") else {
+            fatalError("Unable to instantiate client1")
+        }
+        
+        guard let client3 = Client(name: "Kim", items: ["Manicure", "Fill", "Fullset", "Combo", "Polish change"]) else {
+            fatalError("Unable to instantiate client1")
+        }
+        
+        
+        clients += [client1, client2, client3]
+    }
+    
     private func saveClients() {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(clients, toFile: Client.ArchiveURL.path)
         

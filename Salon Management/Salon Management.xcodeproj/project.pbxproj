@@ -16,6 +16,7 @@
 		71AE449D20FF667500055B56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71AE449C20FF667500055B56 /* Assets.xcassets */; };
 		71AE44A020FF667500055B56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71AE449E20FF667500055B56 /* LaunchScreen.storyboard */; };
 		71AE44AB20FF667B00055B56 /* Salon_ManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE44AA20FF667B00055B56 /* Salon_ManagementTests.swift */; };
+		71E4879621029BC70010CB3F /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4879521029BC70010CB3F /* ItemCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		71AE44A620FF667B00055B56 /* Salon ManagementTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Salon ManagementTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71AE44AA20FF667B00055B56 /* Salon_ManagementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Salon_ManagementTests.swift; sourceTree = "<group>"; };
 		71AE44AC20FF667B00055B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71E4879521029BC70010CB3F /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				719A368A210108D700F942E6 /* ClientTableViewCell.swift */,
 				719A36882100EB9500F942E6 /* Client.swift */,
 				71AE449920FF667500055B56 /* Main.storyboard */,
+				71E4879521029BC70010CB3F /* ItemCollectionViewCell.swift */,
 				719A368C210115F400F942E6 /* ClientViewController.swift */,
 				71AE449C20FF667500055B56 /* Assets.xcassets */,
 				71AE449E20FF667500055B56 /* LaunchScreen.storyboard */,
@@ -211,6 +214,7 @@
 				71AE449820FF667500055B56 /* ClientTableViewController.swift in Sources */,
 				71AE449620FF667500055B56 /* AppDelegate.swift in Sources */,
 				719A368B210108D700F942E6 /* ClientTableViewCell.swift in Sources */,
+				71E4879621029BC70010CB3F /* ItemCollectionViewCell.swift in Sources */,
 				719A368D210115F400F942E6 /* ClientViewController.swift in Sources */,
 				719A36892100EB9500F942E6 /* Client.swift in Sources */,
 			);
