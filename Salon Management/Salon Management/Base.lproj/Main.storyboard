@@ -78,10 +78,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Oa6-N6-koI">
-                                <rect key="frame" x="150" y="104" width="526" height="880"/>
+                                <rect key="frame" x="50" y="104" width="668" height="880"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Halo Nails" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DEl-FW-ZOV">
-                                        <rect key="frame" x="0.0" y="0.0" width="526" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="668" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="zrv-CQ-N34"/>
                                         </constraints>
@@ -90,20 +90,20 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQT-k1-xAR">
-                                        <rect key="frame" x="0.0" y="85" width="526" height="89"/>
+                                        <rect key="frame" x="0.0" y="85" width="668" height="89"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5Q-Vc-FoA">
                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="89"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Name" borderStyle="line" placeholder="Name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="2" translatesAutoresizingMaskIntoConstraints="NO" id="4Mo-F0-RzT">
-                                                <rect key="frame" x="74" y="0.0" width="378" height="89"/>
+                                                <rect key="frame" x="74" y="0.0" width="520" height="89"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mUJ-2X-4gT">
-                                                <rect key="frame" x="452" y="0.0" width="74" height="89"/>
+                                                <rect key="frame" x="594" y="0.0" width="74" height="89"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                         </subviews>
@@ -112,7 +112,7 @@
                                         </constraints>
                                     </stackView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="meG-4N-Xnp">
-                                        <rect key="frame" x="0.0" y="189" width="526" height="503"/>
+                                        <rect key="frame" x="0.0" y="189" width="668" height="503"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="45" minimumInteritemSpacing="1" id="iRJ-LM-B7H">
                                             <size key="itemSize" width="225" height="50"/>
@@ -128,13 +128,13 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="225" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f22-UV-kHh" customClass="CheckBox" customModule="Salon_Management" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="f22-UV-kHh" customClass="CheckBox" customModule="Salon_Management" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="10" width="32" height="32"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="32" id="2QY-CC-Inj"/>
                                                                 <constraint firstAttribute="width" secondItem="f22-UV-kHh" secondAttribute="height" multiplier="1:1" id="nSq-1F-6Aw"/>
                                                             </constraints>
-                                                            <state key="normal" title="Button"/>
+                                                            <state key="normal" title="Button" image="uncheckedImage"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gde-3p-4Hh">
                                                             <rect key="frame" x="60" y="0.0" width="165" height="50"/>
@@ -161,7 +161,7 @@
                                         </cells>
                                     </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dj-So-twz">
-                                        <rect key="frame" x="0.0" y="707" width="526" height="30"/>
+                                        <rect key="frame" x="0.0" y="707" width="668" height="30"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                         <state key="normal" title="Submit">
@@ -172,7 +172,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2YT-H3-eo3">
-                                        <rect key="frame" x="0.0" y="752" width="526" height="128"/>
+                                        <rect key="frame" x="0.0" y="752" width="668" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="SAi-6Q-6iL"/>
                                         </constraints>
@@ -185,10 +185,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Oa6-N6-koI" firstAttribute="leading" secondItem="3aN-4I-9Iv" secondAttribute="leading" constant="150" id="BM5-yb-UTI"/>
+                            <constraint firstItem="Oa6-N6-koI" firstAttribute="leading" secondItem="3aN-4I-9Iv" secondAttribute="leading" constant="50" id="BM5-yb-UTI"/>
                             <constraint firstItem="Oa6-N6-koI" firstAttribute="top" secondItem="3aN-4I-9Iv" secondAttribute="top" constant="40" id="DZw-8f-fdP"/>
                             <constraint firstItem="3aN-4I-9Iv" firstAttribute="bottom" secondItem="Oa6-N6-koI" secondAttribute="bottom" constant="40" id="pIX-b7-7rf"/>
-                            <constraint firstItem="3aN-4I-9Iv" firstAttribute="trailing" secondItem="Oa6-N6-koI" secondAttribute="trailing" constant="92" id="vqb-D6-cRx"/>
+                            <constraint firstItem="3aN-4I-9Iv" firstAttribute="trailing" secondItem="Oa6-N6-koI" secondAttribute="trailing" constant="50" id="vqb-D6-cRx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3aN-4I-9Iv"/>
                     </view>
@@ -413,4 +413,7 @@
             <point key="canvasLocation" x="3804" y="614"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="uncheckedImage" width="16" height="16"/>
+    </resources>
 </document>
