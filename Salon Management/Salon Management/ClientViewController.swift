@@ -10,10 +10,15 @@ import UIKit
 import os.log
 
 class ClientViewController: UIViewController, UITextFieldDelegate,
-    UINavigationControllerDelegate{
+UINavigationControllerDelegate, UICollectionViewDataSource{
     
     //MARK: Properties
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var itemSelectList: UICollectionView!
+    
+    //Possible options for the user to select.
+    var possibleItems: [String] = ["Manicure", "Manicure Shellac", "Ombré", "Pedicure", "Pedicure Shellac", "Fill", "Combo", "Fullset", "Dip Powder", "Polish Change"]
     
     
     //Either made by being passed in, or constructed in prepare()
@@ -23,6 +28,7 @@ class ClientViewController: UIViewController, UITextFieldDelegate,
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        itemSelectList.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,11 +64,36 @@ class ClientViewController: UIViewController, UITextFieldDelegate,
             return
         }
         
-        //let name = nameTextField.text ?? ""
+        let name = nameTextField.text ?? ""
+        var items = [String]()
+        
+        for i in 0...itemSelectList.numberOfItems(inSection: 1) {
+            let cell = itemSelectList.cellForItem(at: IndexPath(item: i, section: 1)) as? ItemSelectCollectionViewCell
+            if let checked = cell?.checkbox.isChecked, let name = cell?.itemNameLabel.text, checked {
+                items += [name]
+            }
+        }
         
         //Set the meal to be passed to MealTableViewController after the unwind segue.
-        //client = Client(name: name, photo: photo, rating: rating)
+        client = Client(name: name, items: items)
     }
  
-
+    
+    //MARK: UICollectionViewDatasource
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return possibleItems.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemSelectCollectionViewCell", for: indexPath) as? ItemSelectCollectionViewCell else {
+            fatalError("dequeued cell is not of ItemSelectCollectionViewCell.")
+        }
+        
+        let item = possibleItems[indexPath.row]
+        
+        // Configure the cell
+        cell.itemNameLabel.text = item
+        
+        return cell
+    }
 }
