@@ -41,9 +41,17 @@ UINavigationControllerDelegate, UICollectionViewDataSource{
     
     //MARK: Actions
     @IBAction func unwindToClientSignIn(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.source as? ClientCallInViewController, let newClient = sourceViewController.client {
-            client = newClient
-            self.navigationController?.popViewController(animated: true)
+        if let sourceViewController = sender.source as? ClientCallInViewController {
+            client = sourceViewController.client
+            if client != nil {
+                self.performSegue(withIdentifier: "callSignInProccessed", sender: self)
+            }
+            else {
+                os_log("The client is still nil after submitting.", log: OSLog.default, type: .debug)
+            }
+        }
+        else {
+            os_log("The controller is not set up properly.", log: OSLog.default, type: .debug)
         }
     }
 
@@ -68,13 +76,13 @@ UINavigationControllerDelegate, UICollectionViewDataSource{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        // Configure the destination view controller only when the save button is pressed.
-        guard (sender as? UIButton) != nil else {
-            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+        if client != nil {
             return
         }
         
-        if client != nil {
+        // Configure the destination view controller only when the save button is pressed.
+        guard (sender as? UIButton) != nil else {
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
         }
         

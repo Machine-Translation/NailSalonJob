@@ -53,7 +53,7 @@ UINavigationControllerDelegate, UICollectionViewDataSource{
             owningNavigationController.popViewController(animated: true)
         }
         else {
-            fatalError("The ClientViewController is not inside a navigation controller.")
+            fatalError("The ClientViewCallInController is not inside a navigation controller.")
         }
     }
     
@@ -69,6 +69,7 @@ UINavigationControllerDelegate, UICollectionViewDataSource{
         }
         
         let name = nameTextField.text ?? ""
+        let time = timeTextField.text ?? ""
         var items = ""
         
         for i in 0...itemSelectList.numberOfItems(inSection: 0) {
@@ -84,7 +85,7 @@ UINavigationControllerDelegate, UICollectionViewDataSource{
         }
         
         //Set the meal to be passed to MealTableViewController after the unwind segue.
-        client = Client(name: name, items: items)
+        client = Client(name: name, items: items, employee: nil, timeIn: time, timeBack: nil)
     }
     
     

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7183584021058E87001E226F /* ClientCallInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183583F21058E87001E226F /* ClientCallInViewController.swift */; };
+		718358422106175E001E226F /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718358412106175E001E226F /* SplashViewController.swift */; };
+		7183584421068504001E226F /* ParentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183584321068504001E226F /* ParentTableViewController.swift */; };
 		719A36892100EB9500F942E6 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A36882100EB9500F942E6 /* Client.swift */; };
 		719A368B210108D700F942E6 /* ClientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A368A210108D700F942E6 /* ClientTableViewCell.swift */; };
 		719A368D210115F400F942E6 /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A368C210115F400F942E6 /* ClientViewController.swift */; };
@@ -33,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		7183583F21058E87001E226F /* ClientCallInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientCallInViewController.swift; sourceTree = "<group>"; };
+		718358412106175E001E226F /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		7183584321068504001E226F /* ParentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTableViewController.swift; sourceTree = "<group>"; };
 		719A36882100EB9500F942E6 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		719A368A210108D700F942E6 /* ClientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTableViewCell.swift; sourceTree = "<group>"; };
 		719A368C210115F400F942E6 /* ClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 				719A36882100EB9500F942E6 /* Client.swift */,
 				71E487992103C1420010CB3F /* CheckBox.swift */,
 				71AE449920FF667500055B56 /* Main.storyboard */,
+				7183584321068504001E226F /* ParentTableViewController.swift */,
+				718358412106175E001E226F /* SplashViewController.swift */,
 				71E4879B2103C4C50010CB3F /* ItemSelectCollectionViewCell.swift */,
 				719A368C210115F400F942E6 /* ClientViewController.swift */,
 				7183583F21058E87001E226F /* ClientCallInViewController.swift */,
@@ -218,8 +224,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7183584021058E87001E226F /* ClientCallInViewController.swift in Sources */,
+				7183584421068504001E226F /* ParentTableViewController.swift in Sources */,
 				71E4879A2103C1420010CB3F /* CheckBox.swift in Sources */,
 				71AE449820FF667500055B56 /* ClientTableViewController.swift in Sources */,
+				718358422106175E001E226F /* SplashViewController.swift in Sources */,
 				71AE449620FF667500055B56 /* AppDelegate.swift in Sources */,
 				719A368B210108D700F942E6 /* ClientTableViewCell.swift in Sources */,
 				71E4879C2103C4C50010CB3F /* ItemSelectCollectionViewCell.swift in Sources */,
