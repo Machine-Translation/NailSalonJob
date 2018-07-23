@@ -9,13 +9,14 @@
 import UIKit
 import os.log
 
-class ClientViewController: UIViewController, UITextFieldDelegate,
+class ClientCallInViewController: UIViewController, UITextFieldDelegate,
 UINavigationControllerDelegate, UICollectionViewDataSource{
     
     //MARK: Properties
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var itemSelectList: UICollectionView!
+    @IBOutlet weak var timeTextField: UITextField!
     
     //Possible options for the user to select.
     var possibleItems: [String] = ["Manicure", "Manicure Shellac", "Ombré", "Pedicure", "Pedicure Shellac", "Fill", "Combo", "Fullset", "Dip Powder", "Polish Change"]
@@ -23,30 +24,23 @@ UINavigationControllerDelegate, UICollectionViewDataSource{
     
     //Either made by being passed in, or constructed in prepare()
     var client: Client?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         itemSelectList.dataSource = self
         
         //Sort the Items
         possibleItems.sort()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: Actions
-    @IBAction func unwindToClientSignIn(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.source as? ClientCallInViewController, let newClient = sourceViewController.client {
-            client = newClient
-            self.navigationController?.popViewController(animated: true)
-        }
-    }
-
+    
     
     // MARK: - Navigation
     @IBAction func cancel(_ sender: UIBarButtonItem) {
@@ -74,10 +68,6 @@ UINavigationControllerDelegate, UICollectionViewDataSource{
             return
         }
         
-        if client != nil {
-            return
-        }
-        
         let name = nameTextField.text ?? ""
         var items = ""
         
@@ -96,7 +86,7 @@ UINavigationControllerDelegate, UICollectionViewDataSource{
         //Set the meal to be passed to MealTableViewController after the unwind segue.
         client = Client(name: name, items: items)
     }
- 
+    
     
     //MARK: UICollectionViewDatasource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -116,3 +106,4 @@ UINavigationControllerDelegate, UICollectionViewDataSource{
         return cell
     }
 }
+

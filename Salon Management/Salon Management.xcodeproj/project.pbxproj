@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7183584021058E87001E226F /* ClientCallInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183583F21058E87001E226F /* ClientCallInViewController.swift */; };
 		719A36892100EB9500F942E6 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A36882100EB9500F942E6 /* Client.swift */; };
 		719A368B210108D700F942E6 /* ClientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A368A210108D700F942E6 /* ClientTableViewCell.swift */; };
 		719A368D210115F400F942E6 /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A368C210115F400F942E6 /* ClientViewController.swift */; };
@@ -16,8 +17,6 @@
 		71AE449D20FF667500055B56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71AE449C20FF667500055B56 /* Assets.xcassets */; };
 		71AE44A020FF667500055B56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71AE449E20FF667500055B56 /* LaunchScreen.storyboard */; };
 		71AE44AB20FF667B00055B56 /* Salon_ManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE44AA20FF667B00055B56 /* Salon_ManagementTests.swift */; };
-		71E4879621029BC70010CB3F /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4879521029BC70010CB3F /* ItemCollectionViewCell.swift */; };
-		71E487982102C2CD0010CB3F /* tempCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E487972102C2CD0010CB3F /* tempCollectionViewController.swift */; };
 		71E4879A2103C1420010CB3F /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E487992103C1420010CB3F /* CheckBox.swift */; };
 		71E4879C2103C4C50010CB3F /* ItemSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4879B2103C4C50010CB3F /* ItemSelectCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -33,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7183583F21058E87001E226F /* ClientCallInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientCallInViewController.swift; sourceTree = "<group>"; };
 		719A36882100EB9500F942E6 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		719A368A210108D700F942E6 /* ClientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTableViewCell.swift; sourceTree = "<group>"; };
 		719A368C210115F400F942E6 /* ClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewController.swift; sourceTree = "<group>"; };
@@ -46,8 +46,6 @@
 		71AE44A620FF667B00055B56 /* Salon ManagementTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Salon ManagementTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71AE44AA20FF667B00055B56 /* Salon_ManagementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Salon_ManagementTests.swift; sourceTree = "<group>"; };
 		71AE44AC20FF667B00055B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71E4879521029BC70010CB3F /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
-		71E487972102C2CD0010CB3F /* tempCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempCollectionViewController.swift; sourceTree = "<group>"; };
 		71E487992103C1420010CB3F /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		71E4879B2103C4C50010CB3F /* ItemSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,13 +92,12 @@
 				71AE449520FF667500055B56 /* AppDelegate.swift */,
 				71AE449720FF667500055B56 /* ClientTableViewController.swift */,
 				719A368A210108D700F942E6 /* ClientTableViewCell.swift */,
-				71E487972102C2CD0010CB3F /* tempCollectionViewController.swift */,
 				719A36882100EB9500F942E6 /* Client.swift */,
 				71E487992103C1420010CB3F /* CheckBox.swift */,
 				71AE449920FF667500055B56 /* Main.storyboard */,
 				71E4879B2103C4C50010CB3F /* ItemSelectCollectionViewCell.swift */,
-				71E4879521029BC70010CB3F /* ItemCollectionViewCell.swift */,
 				719A368C210115F400F942E6 /* ClientViewController.swift */,
+				7183583F21058E87001E226F /* ClientCallInViewController.swift */,
 				71AE449C20FF667500055B56 /* Assets.xcassets */,
 				71AE449E20FF667500055B56 /* LaunchScreen.storyboard */,
 				71AE44A120FF667500055B56 /* Info.plist */,
@@ -220,12 +217,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7183584021058E87001E226F /* ClientCallInViewController.swift in Sources */,
 				71E4879A2103C1420010CB3F /* CheckBox.swift in Sources */,
-				71E487982102C2CD0010CB3F /* tempCollectionViewController.swift in Sources */,
 				71AE449820FF667500055B56 /* ClientTableViewController.swift in Sources */,
 				71AE449620FF667500055B56 /* AppDelegate.swift in Sources */,
 				719A368B210108D700F942E6 /* ClientTableViewCell.swift in Sources */,
-				71E4879621029BC70010CB3F /* ItemCollectionViewCell.swift in Sources */,
 				71E4879C2103C4C50010CB3F /* ItemSelectCollectionViewCell.swift in Sources */,
 				719A368D210115F400F942E6 /* ClientViewController.swift in Sources */,
 				719A36892100EB9500F942E6 /* Client.swift in Sources */,

@@ -16,7 +16,7 @@ class Client: NSObject, NSCoding {
     var employee: String?
     var timeIn: String
     var timeBack: String?
-    var items = [String]()
+    var items: String
     
     //MARK: Archiving Paths
     
@@ -33,7 +33,7 @@ class Client: NSObject, NSCoding {
     }
     
     //MARK: Initialization
-    init?(name: String, items: [String], employee: String?, timeIn: String, timeBack: String?) {
+    init?(name: String, items: String, employee: String?, timeIn: String, timeBack: String?) {
         
         //The name must not be empty
         guard !name.isEmpty else {
@@ -51,14 +51,14 @@ class Client: NSObject, NSCoding {
         }
         
         self.name = name
-        self.items += items
+        self.items = items
         self.timeIn = timeIn
         self.employee = employee
         self.timeBack = timeBack
     }
     
     
-    convenience init?(name: String, items: [String]) {
+    convenience init?(name: String, items: String) {
         //The name must not be empty
         guard !name.isEmpty else {
             return nil
@@ -109,7 +109,7 @@ class Client: NSObject, NSCoding {
         let timeBack = aDecoder.decodeObject(forKey: PropertyKey.timeBack) as? String
         
         //Items are important, and are requrired.
-        guard let items = aDecoder.decodeObject(forKey: PropertyKey.items) as? [String] else {
+        guard let items = aDecoder.decodeObject(forKey: PropertyKey.items) as? String else {
             os_log("Unable to decode items variable for client.", log: OSLog.default, type: .debug)
             return nil
         }

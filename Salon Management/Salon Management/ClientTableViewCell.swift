@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClientTableViewCell: UITableViewCell, UICollectionViewDataSource {
+class ClientTableViewCell: UITableViewCell {
     
     
     //MARK: Properties
@@ -17,15 +17,12 @@ class ClientTableViewCell: UITableViewCell, UICollectionViewDataSource {
     @IBOutlet weak var employeeNameLabel: UILabel!
     @IBOutlet weak var timeBackLabel: UILabel!
     @IBOutlet weak var clientNumberLabel: UILabel!
-    @IBOutlet weak var itemCollectionView: UICollectionView!
-    
-    var items = [String]()
+    @IBOutlet weak var itemCollectionLabel: UILabel!
     
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        itemCollectionView.dataSource = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -33,31 +30,4 @@ class ClientTableViewCell: UITableViewCell, UICollectionViewDataSource {
 
         // Configure the view for the selected state
     }
-    
-    //MARK: Extra
-    func updateView() {
-        //Needs to force the collection view to update with new items.
-        itemCollectionView.reloadData()
-    }
- 
-    
-    // MARK: UICollectionViewDataSource
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath) as? ItemCollectionViewCell else {
-            fatalError("dequeued cell is not of ItemCollectionViewCell.")
-        }
-        
-        let item = items[indexPath.row]
-        
-        // Configure the cell
-        cell.itemNameLabel.text = item
-        
-        return cell
-    }
-
 }

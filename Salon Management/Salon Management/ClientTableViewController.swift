@@ -61,9 +61,8 @@ class ClientTableViewController: UITableViewController {
         cell.signInTimeLabel.text = client.timeIn
         cell.employeeNameLabel.text = client.employee
         cell.timeBackLabel.text = client.timeBack
-        cell.items = client.items
+        cell.itemCollectionLabel.text = client.items
         cell.clientNumberLabel.text = String(indexPath.row + 1)
-        cell.updateView()
         
         return cell
     }
@@ -160,15 +159,15 @@ class ClientTableViewController: UITableViewController {
     
     //MARK: Private functions
     private func loadSampleClients() {
-        guard let client1 = Client(name: "Steve", items: [""]) else {
+        guard let client1 = Client(name: "Steve", items: "Fill") else {
             fatalError("Unable to instantiate client1")
         }
         
-        guard let client2 = Client(name: "Michelle", items: ["Manicure", "Fill", "Fullset"], employee: "Stella", timeIn: "15:00", timeBack: "17:00") else {
+        guard let client2 = Client(name: "Michelle", items: "Manicure, Fill, Fullset", employee: "Stella", timeIn: "15:00", timeBack: "17:00") else {
             fatalError("Unable to instantiate client1")
         }
         
-        guard let client3 = Client(name: "Kim", items: ["Manicure", "Fill", "Fullset", "Combo", "Polish change"]) else {
+        guard let client3 = Client(name: "Kim", items: "Manicure, Fill, Fullset, Combo, Polish change") else {
             fatalError("Unable to instantiate client1")
         }
         
