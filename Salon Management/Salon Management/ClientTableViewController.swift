@@ -14,6 +14,7 @@ class ClientTableViewController: UITableViewController {
     //MARK: Properties
     @IBOutlet weak var SingInButton: UIButton!
     var clients = [Client]()
+    var deletedClients = [Client]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,13 +73,110 @@ class ClientTableViewController: UITableViewController {
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return false
+        if let cell = tableView.cellForRow(at: indexPath) as? ClientTableViewCell {
+            let client = clients[indexPath.row]
+            if (cell.employeeNameLabel.text == nil || cell.employeeNameLabel.text!.isEmpty) && !client.noShow && !client.left {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+        else {
+            return false
+        }
     }
     
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        if let cell = tableView.cellForRow(at: indexPath) as? ClientTableViewCell {
+            let client = clients[indexPath.row]
+            
+            //One of the options that appears on the right when swipe left on a cell of the table.
+            let claimAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Claim client", handler: { (action: UITableViewRowAction, indexPath: IndexPath) -> Void in
+                
+                //The alert that pops up when this this option is selected.
+                let claimMenu = UIAlertController(title: "Claim \(cell.clientNameLabel.text ?? "client")", message: "Please enter your name", preferredStyle: .alert)
+                
+                //A button that confirms the text in the text field.
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (_) in
+                    let textField = claimMenu.textFields![0]
+                    
+                    //Set up the timestamp
+                    let now = Date()
+                    let formatter = DateFormatter()
+                    
+                    formatter.timeZone = TimeZone.current
+                    formatter.dateFormat = "HH:mm"
+                    
+                    //Set the employee and time to the cell.
+                    cell.employeeNameLabel.text = textField.text
+                    cell.timeBackLabel.text = formatter.string(from: now)
+                    
+                    //Set the employee and time for the client object.
+                    client.employee = textField.text
+                    client.timeBack = formatter.string(from: now)
+                })
+                
+                //A button that cancels the alert.
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                
+                //Add the text field that will collect the employee's name to the alert.
+                claimMenu.addTextField(configurationHandler: { (textField) in
+                    textField.placeholder = "Employee name here"
+                })
+                
+                
+                //Add the OK and cancel actions to the alert.
+                claimMenu.addAction(okAction)
+                claimMenu.addAction(cancelAction)
+                
+                //Present the alert.
+                self.present(claimMenu, animated: true, completion: nil)
+            })
+            
+            let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete client", handler: { (action: UITableViewRowAction, indexPath: IndexPath) -> Void in
+                let deleteMenu = UIAlertController(title: "Delete \(cell.clientNameLabel.text ?? "client")", message: "Why should the client be removed?", preferredStyle: .alert)
+                let noShowAction = UIAlertAction(title: "Did not show", style: UIAlertActionStyle.default, handler: { (_) in
+                    client.noShow = true
+                    
+                    //Remove the cell from the table.
+                    //tableView.deleteRows(at: [indexPath], with: .automatic)
+                    self.deletedClients += [client]
+                    self.clients.remove(at: indexPath.row)
+                    tableView.reloadData()
+                })
+                
+                let leftAction = UIAlertAction(title: "Client left", style: UIAlertActionStyle.default, handler: { (_) in
+                    client.left = true
+                    
+                    //Remove the cell from the table.
+                    //tableView.deleteRows(at: [indexPath], with: .automatic)
+                    self.deletedClients += [client]
+                    self.clients.remove(at: indexPath.row)
+                    tableView.reloadData()
+                })
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                
+                deleteMenu.addAction(noShowAction)
+                deleteMenu.addAction(leftAction)
+                deleteMenu.addAction(cancelAction)
+                
+                self.present(deleteMenu, animated: true, completion: nil)
+            })
+            
+            return [claimAction, deleteAction]
+        }
+        else {
+            return nil
+        }
+    }
     
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        /*
         if editingStyle == .delete {
             // Delete the row from the data source
             clients.remove(at: indexPath.row)
@@ -87,24 +185,8 @@ class ClientTableViewController: UITableViewController {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
+        */
     }
-    
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
     
     // MARK: - Navigation
     

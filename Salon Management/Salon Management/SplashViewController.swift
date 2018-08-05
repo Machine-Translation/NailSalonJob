@@ -34,23 +34,30 @@ class SplashViewController: UIViewController {
                     if todayFolder != nil {
                         
                         //Create the destination url for the text file to be saved.
-                        let fileUrl = todayFolder!.appendingPathComponent("client list2.txt")//.appendingPathExtension("txt")
+                        let clientUrl = todayFolder!.appendingPathComponent("client list.txt")
+                        let deletedClientUrl = todayFolder!.appendingPathComponent("deleted client list.txt")
                         
                         //Set up the text
                         var text = ""
                         
                         //The header of the file to show the layout.
-                        text += "Client name\tTime signed in\r\n"
+                        text += "Client name\t\t\t\tTime signed in\r\n"
                         text += "List of items that that the client wanted that is comma delimeted\r\n"
-                        text += "Employee who took client\tTime client was taken back\r\n"
-                        text += "\r\n"
+                        
+                        var clientText = text + "Employee who took client\t\t\t\tTime client was taken back\r\n\r\n"
+                        var deletedClientText = text + "Reason why client was deleted"
                         
                         for client in vc.clients {
-                            text += String(describing: client) + "\r\n"
+                            clientText += String(describing: client) + "\r\n"
+                        }
+                        
+                        for client in vc.deletedClients {
+                            deletedClientText += String(describing: client) + "\r\n"
                         }
                         
                         //Try to write to disk
-                        try text.write(to: fileUrl, atomically: true, encoding: .utf8)
+                        try clientText.write(to: clientUrl, atomically: true, encoding: .utf8)
+                        try deletedClientText.write(to: deletedClientUrl, atomically: true, encoding: .utf8)
                     }
                 }
                 catch {

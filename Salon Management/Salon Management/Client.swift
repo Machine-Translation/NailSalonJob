@@ -17,17 +17,25 @@ class Client: NSObject, NSCoding {
     var timeIn: String
     var timeBack: String?
     var items: String
+    var noShow = false
+    var left = false
     
     override var description: String {
         // "\t" inserts a tab into the String.
         // "\n" is for IOS new line, but "\r\n" is universal (including windows) new line.
-        let line1 = name + "\t" + timeIn + "\r\n"
+        let line1 = name + "\t\t\t\t" + timeIn + "\r\n"
         let line2 = items + "\r\n"
         var line3 = ""
         
         //Both will either have a value or be nil together, so check both together. If they are nil then skip this line.
         if employee != nil && timeBack != nil {
-            line3 = employee! + "\t" + timeBack! + "\r\n"
+            line3 = employee! + "\t\t\t\t" + timeBack! + "\r\n"
+        }
+        else if noShow {
+            line3 = "client did not show for appointment\r\n"
+        }
+        else if left {
+            line3 = "client left before they could be taken back\r\n"
         }
         
         return line1 + line2 + line3

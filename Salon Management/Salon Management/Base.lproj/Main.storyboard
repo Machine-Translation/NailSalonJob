@@ -222,8 +222,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4hw-Gq-iiR">
-                                <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash screen" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4hw-Gq-iiR">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ah3-Oc-QHl">
                                 <rect key="frame" x="309" y="779" width="150" height="45"/>
@@ -243,11 +243,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="4hw-Gq-iiR" secondAttribute="trailing" id="3IG-4s-TXx"/>
-                            <constraint firstItem="4hw-Gq-iiR" firstAttribute="top" secondItem="s76-JA-vjj" secondAttribute="top" id="4Ar-h8-DjH"/>
+                            <constraint firstItem="4hw-Gq-iiR" firstAttribute="top" secondItem="Uir-Pc-d0D" secondAttribute="top" id="4Ar-h8-DjH"/>
                             <constraint firstItem="s76-JA-vjj" firstAttribute="centerX" secondItem="ah3-Oc-QHl" secondAttribute="centerX" id="CBL-LQ-5Nc"/>
                             <constraint firstItem="4hw-Gq-iiR" firstAttribute="leading" secondItem="Uir-Pc-d0D" secondAttribute="leading" id="aZo-aE-08N"/>
                             <constraint firstItem="s76-JA-vjj" firstAttribute="bottom" secondItem="ah3-Oc-QHl" secondAttribute="bottom" constant="200" id="mX8-7k-DRe"/>
-                            <constraint firstItem="4hw-Gq-iiR" firstAttribute="bottom" secondItem="s76-JA-vjj" secondAttribute="bottom" id="n8q-JO-5nR"/>
+                            <constraint firstItem="4hw-Gq-iiR" firstAttribute="bottom" secondItem="Uir-Pc-d0D" secondAttribute="bottom" id="n8q-JO-5nR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="s76-JA-vjj"/>
                     </view>
@@ -553,6 +553,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Splash screen" width="2464" height="1632"/>
         <image name="uncheckedImage" width="16" height="16"/>
     </resources>
 </document>
