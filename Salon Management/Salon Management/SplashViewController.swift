@@ -45,7 +45,7 @@ class SplashViewController: UIViewController {
                         text += "List of items that that the client wanted that is comma delimeted\r\n"
                         
                         var clientText = text + "Employee who took client\t\t\t\tTime client was taken back\r\n\r\n"
-                        var deletedClientText = text + "Reason why client was deleted"
+                        var deletedClientText = text + "Reason why client was deleted\r\n\r\n"
                         
                         for client in vc.clients {
                             clientText += String(describing: client) + "\r\n"
