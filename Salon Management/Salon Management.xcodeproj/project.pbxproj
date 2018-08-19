@@ -13,6 +13,8 @@
 		719A36892100EB9500F942E6 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A36882100EB9500F942E6 /* Client.swift */; };
 		719A368B210108D700F942E6 /* ClientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A368A210108D700F942E6 /* ClientTableViewCell.swift */; };
 		719A368D210115F400F942E6 /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A368C210115F400F942E6 /* ClientViewController.swift */; };
+		71A481DD2127C7BA005C7F74 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A481DC2127C7BA005C7F74 /* GradientView.swift */; };
+		71A481DF2127CFB3005C7F74 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A481DE2127CFB3005C7F74 /* GradientButton.swift */; };
 		71AE449620FF667500055B56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE449520FF667500055B56 /* AppDelegate.swift */; };
 		71AE449820FF667500055B56 /* ClientTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE449720FF667500055B56 /* ClientTableViewController.swift */; };
 		71AE449B20FF667500055B56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71AE449920FF667500055B56 /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 		719A36882100EB9500F942E6 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		719A368A210108D700F942E6 /* ClientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTableViewCell.swift; sourceTree = "<group>"; };
 		719A368C210115F400F942E6 /* ClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewController.swift; sourceTree = "<group>"; };
+		71A481DC2127C7BA005C7F74 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		71A481DE2127CFB3005C7F74 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		71AE449220FF667400055B56 /* Salon Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Salon Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71AE449520FF667500055B56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71AE449720FF667500055B56 /* ClientTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTableViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 			children = (
 				71AE449520FF667500055B56 /* AppDelegate.swift */,
 				71AE449720FF667500055B56 /* ClientTableViewController.swift */,
+				71A481DC2127C7BA005C7F74 /* GradientView.swift */,
+				71A481DE2127CFB3005C7F74 /* GradientButton.swift */,
 				719A368A210108D700F942E6 /* ClientTableViewCell.swift */,
 				719A36882100EB9500F942E6 /* Client.swift */,
 				71E487992103C1420010CB3F /* CheckBox.swift */,
@@ -224,7 +230,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7183584021058E87001E226F /* ClientCallInViewController.swift in Sources */,
+				71A481DF2127CFB3005C7F74 /* GradientButton.swift in Sources */,
 				7183584421068504001E226F /* ParentTableViewController.swift in Sources */,
+				71A481DD2127C7BA005C7F74 /* GradientView.swift in Sources */,
 				71E4879A2103C1420010CB3F /* CheckBox.swift in Sources */,
 				71AE449820FF667500055B56 /* ClientTableViewController.swift in Sources */,
 				718358422106175E001E226F /* SplashViewController.swift in Sources */,

@@ -73,18 +73,18 @@ class ClientTableViewController: UITableViewController {
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        if let cell = tableView.cellForRow(at: indexPath) as? ClientTableViewCell {
-            let client = clients[indexPath.row]
-            if (cell.employeeNameLabel.text == nil || cell.employeeNameLabel.text!.isEmpty) && !client.noShow && !client.left {
+        //if let cell = tableView.cellForRow(at: indexPath) as? ClientTableViewCell {
+            //let client = clients[indexPath.row]
+            //if (cell.employeeNameLabel.text == nil || cell.employeeNameLabel.text!.isEmpty) && !client.noShow && !client.left {
                 return true
-            }
-            else {
-                return false
-            }
-        }
-        else {
-            return false
-        }
+            //}
+            //else {
+            //    return false
+            //}
+        //}
+        //else {
+        //    return false
+        //}
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
@@ -92,11 +92,27 @@ class ClientTableViewController: UITableViewController {
         if let cell = tableView.cellForRow(at: indexPath) as? ClientTableViewCell {
             let client = clients[indexPath.row]
             
+            //Strings that will determine what to show the user if the client has been claimed yet or not.
+            var claimActionText = "Client not set up properly"
+            var claimMenuText = "Something is wrong"
+            var claimBoolean = false
+            
+            if cell.employeeNameLabel.text == nil || cell.employeeNameLabel.text!.isEmpty {
+                claimActionText = "Claim client"
+                claimMenuText = "Claim \(cell.clientNameLabel.text ?? "client")"
+                claimBoolean = false
+            }
+            else {
+                claimActionText = "Edit employee name"
+                claimMenuText = "Old employee name \(cell.employeeNameLabel.text!)"
+                claimBoolean = true
+            }
+            
             //One of the options that appears on the right when swipe left on a cell of the table.
-            let claimAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Claim client", handler: { (action: UITableViewRowAction, indexPath: IndexPath) -> Void in
+            let claimAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: claimActionText, handler: { (action: UITableViewRowAction, indexPath: IndexPath) -> Void in
                 
                 //The alert that pops up when this this option is selected.
-                let claimMenu = UIAlertController(title: "Claim \(cell.clientNameLabel.text ?? "client")", message: "Please enter your name", preferredStyle: .alert)
+                let claimMenu = UIAlertController(title: claimMenuText, message: "Please enter your name", preferredStyle: .alert)
                 
                 //A button that confirms the text in the text field.
                 let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (_) in
@@ -111,11 +127,15 @@ class ClientTableViewController: UITableViewController {
                     
                     //Set the employee and time to the cell.
                     cell.employeeNameLabel.text = textField.text
-                    cell.timeBackLabel.text = formatter.string(from: now)
+                    if !claimBoolean {
+                        cell.timeBackLabel.text = formatter.string(from: now)
+                    }
                     
                     //Set the employee and time for the client object.
                     client.employee = textField.text
-                    client.timeBack = formatter.string(from: now)
+                    if !claimBoolean {
+                        client.timeBack = formatter.string(from: now)
+                    }
                 })
                 
                 //A button that cancels the alert.
