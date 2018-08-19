@@ -117,7 +117,7 @@
                     <navigationItem key="navigationItem" title="Sign in list" id="7CE-ZH-lF5">
                         <barButtonItem key="leftBarButtonItem" title="Close Store" id="RQb-2W-E4y">
                             <connections>
-                                <segue destination="OHx-TR-70l" kind="unwind" unwindAction="unwindToSplashViewWithSender:" id="JyF-gr-gdu"/>
+                                <segue destination="OHx-TR-70l" kind="unwind" identifier="unwindSegue" unwindAction="unwindToSplashViewWithSender:" id="JyF-gr-gdu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -127,7 +127,7 @@
             </objects>
             <point key="canvasLocation" x="2851.5625" y="121.87499999999999"/>
         </scene>
-        <!--Hailo Nail Salon-->
+        <!--Halo Nail Salon-->
         <scene sceneID="ivj-2J-Nsr">
             <objects>
                 <viewController id="Cc1-FE-cdi" customClass="ClientViewController" customModule="Salon_Management" customModuleProvider="target" sceneMemberID="viewController">
@@ -254,7 +254,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <navigationItem key="navigationItem" title="Hailo Nail Salon" id="qug-8v-l9C">
+                    <navigationItem key="navigationItem" title="Halo Nail Salon" id="qug-8v-l9C">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1ma-Nf-eFr">
                             <connections>
                                 <action selector="cancel:" destination="Cc1-FE-cdi" id="xvP-jE-2Bh"/>
@@ -303,6 +303,20 @@
                                     <segue destination="nvt-4E-hku" kind="show" id="Spa-PZ-9Kn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNQ-Aa-Grr">
+                                <rect key="frame" x="309" y="840" width="150" height="45"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kNQ-Aa-Grr" secondAttribute="height" multiplier="30:9" id="jeH-aw-lb7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Print day">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="printDay:" destination="qja-IY-tOi" eventType="touchUpInside" id="YQ3-Wf-U0Z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -310,11 +324,16 @@
                             <constraint firstItem="4hw-Gq-iiR" firstAttribute="top" secondItem="Uir-Pc-d0D" secondAttribute="top" id="4Ar-h8-DjH"/>
                             <constraint firstItem="s76-JA-vjj" firstAttribute="centerX" secondItem="ah3-Oc-QHl" secondAttribute="centerX" id="CBL-LQ-5Nc"/>
                             <constraint firstItem="4hw-Gq-iiR" firstAttribute="leading" secondItem="Uir-Pc-d0D" secondAttribute="leading" id="aZo-aE-08N"/>
+                            <constraint firstItem="s76-JA-vjj" firstAttribute="bottom" secondItem="kNQ-Aa-Grr" secondAttribute="bottom" constant="139" id="d4j-AM-UX8"/>
                             <constraint firstItem="s76-JA-vjj" firstAttribute="bottom" secondItem="ah3-Oc-QHl" secondAttribute="bottom" constant="200" id="mX8-7k-DRe"/>
                             <constraint firstItem="4hw-Gq-iiR" firstAttribute="bottom" secondItem="Uir-Pc-d0D" secondAttribute="bottom" id="n8q-JO-5nR"/>
+                            <constraint firstItem="kNQ-Aa-Grr" firstAttribute="centerX" secondItem="s76-JA-vjj" secondAttribute="centerX" id="wIT-87-aQs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="s76-JA-vjj"/>
                     </view>
+                    <connections>
+                        <outlet property="openStoreButton" destination="ah3-Oc-QHl" id="Zeo-Lh-BFQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNS-ai-T1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -512,7 +531,7 @@
             </objects>
             <point key="canvasLocation" x="3804" y="614"/>
         </scene>
-        <!--Hailo Nail Salon-->
+        <!--Halo Nail Salon-->
         <scene sceneID="26w-lz-U6q">
             <objects>
                 <viewController id="PAs-eW-Oke" customClass="ClientCallInViewController" customModule="Salon_Management" customModuleProvider="target" sceneMemberID="viewController">
@@ -649,7 +668,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <navigationItem key="navigationItem" title="Hailo Nail Salon" id="t0c-Y9-hcP">
+                    <navigationItem key="navigationItem" title="Halo Nail Salon" id="t0c-Y9-hcP">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="MHD-Hn-xnC">
                             <connections>
                                 <action selector="cancel:" destination="PAs-eW-Oke" id="ezD-gi-dhv"/>
