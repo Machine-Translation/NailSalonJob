@@ -27,7 +27,7 @@ class ClientTableViewController: UITableViewController {
             clients += savedClients
         }
         else {
-            loadSampleClients()
+            //loadSampleClients()
         }
     }
     
