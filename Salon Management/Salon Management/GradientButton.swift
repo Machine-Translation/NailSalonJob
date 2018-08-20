@@ -42,10 +42,18 @@ class GradientButton: UIButton {
         }
     }
     
+    //Code from: https://stackoverflow.com/a/48369739
+    //Needed to be added because the sides were not being set correctly.
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        // at this self.view has updated its layout, so now you can update gradientLayer's frame
+        gradientLayer.frame = self.bounds
+    }
+    
     //Code from: https://spin.atomicobject.com/2017/12/14/gradient-uibutton-swift/
     private func setGradient(topGradientColor: UIColor?, bottomGradientColor: UIColor?, borderColor: UIColor?, borderWidth: CGFloat) {
         if let topGradientColor = topGradientColor, let bottomGradientColor = bottomGradientColor, let borderColor = borderColor{
-            gradientLayer.frame = bounds
             gradientLayer.colors = [topGradientColor.cgColor, bottomGradientColor.cgColor]
             gradientLayer.borderColor = borderColor.cgColor
             gradientLayer.borderWidth = borderWidth
