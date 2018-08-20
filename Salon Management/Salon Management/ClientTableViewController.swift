@@ -27,7 +27,7 @@ class ClientTableViewController: UITableViewController {
             clients += savedClients
         }
         else {
-            //loadSampleClients()
+            loadSampleClients()
         }
     }
     
@@ -109,7 +109,7 @@ class ClientTableViewController: UITableViewController {
             }
             
             //One of the options that appears on the right when swipe left on a cell of the table.
-            let claimAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: claimActionText, handler: { (action: UITableViewRowAction, indexPath: IndexPath) -> Void in
+            let claimAction = UITableViewRowAction(style: UITableViewRowActionStyle.normal, title: claimActionText, handler: { (action: UITableViewRowAction, indexPath: IndexPath) -> Void in
                 
                 //The alert that pops up when this this option is selected.
                 let claimMenu = UIAlertController(title: claimMenuText, message: "Please enter your name", preferredStyle: .alert)
@@ -155,7 +155,7 @@ class ClientTableViewController: UITableViewController {
                 self.present(claimMenu, animated: true, completion: nil)
             })
             
-            let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete client", handler: { (action: UITableViewRowAction, indexPath: IndexPath) -> Void in
+            let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.destructive, title: "Delete client", handler: { (action: UITableViewRowAction, indexPath: IndexPath) -> Void in
                 let deleteMenu = UIAlertController(title: "Delete \(cell.clientNameLabel.text ?? "client")", message: "Why should the client be removed?", preferredStyle: .alert)
                 let noShowAction = UIAlertAction(title: "Did not show", style: UIAlertActionStyle.default, handler: { (_) in
                     client.noShow = true
@@ -185,6 +185,9 @@ class ClientTableViewController: UITableViewController {
                 
                 self.present(deleteMenu, animated: true, completion: nil)
             })
+            
+            //Client wants the claim button to be green
+            claimAction.backgroundColor = UIColor.green
             
             return [claimAction, deleteAction]
         }

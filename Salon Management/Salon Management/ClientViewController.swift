@@ -29,6 +29,7 @@ UINavigationControllerDelegate, UICollectionViewDataSource{
 
         // Do any additional setup after loading the view.
         itemSelectList.dataSource = self
+        nameTextField.delegate = self
         
         //Sort the Items
         possibleItems.sort()
@@ -122,5 +123,11 @@ UINavigationControllerDelegate, UICollectionViewDataSource{
         cell.itemNameLabel.text = item
         
         return cell
+    }
+    
+    //MARK: UITextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
